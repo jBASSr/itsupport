@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php 
-    echo '<p> Web page for IT Support Database </p>'; 
+    echo '<p> Web page for Employees for IT Support Database </p>'; 
     $db_connection = pg_connect("host=localhost dbname=itsupport
 user=itsupport password=jrdd3420") or die('Failed to connect'); 
 $query = 'SELECT * FROM client';
