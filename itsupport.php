@@ -1,6 +1,6 @@
 <html>
 <head>
-<title> IT Support </title>
+<title> IT Support Example </title>
 </head>
 <body>
 <?php 
