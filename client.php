@@ -3,7 +3,7 @@
 <title> Client Side for Database </title>
 </head>
 <body>
-<?php 
+<?php echo '<p> Web Server for Client Side for Database </p>'; 
 
 echo '<h1> Web Server for Client side of Database </h1>'; 
 
