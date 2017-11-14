@@ -5,8 +5,7 @@
 <body>
 <?php 
     echo '<p> Web page for Employees for IT Support Database </p>'; 
-    $db_connection = pg_connect("host=localhost dbname=itsupport
-user=itsupport password=jrdd3420") or die('Failed to connect'); 
+$db_connection = pg_connect("host=localhost dbname=itsupport user=itsupport password=jrdd3420");
 $query = 'SELECT * FROM client';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 echo "<table>\n";
