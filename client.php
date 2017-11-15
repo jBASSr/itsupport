@@ -19,19 +19,11 @@ user=itsupport password=jrdd3420") or die('Failed to connect');
 echo "<br>";  //new line
 echo '<h2> Enter your information and problem below: </h2>'; 
 
-<input type="text" name="name" value="<?php echo $name;?>">
-
-
-
-
-
-
-
-
-
-
-
-
+<form action = "submission.php" method = "post">
+Name: <input type="text" name="name"><br>
+Email: <input type="text" name="name"><br>
+<input type = "submit">
+</form>
 
 
 
