@@ -13,7 +13,6 @@ echo '<h1> Welcome to IT Support Start-Up!</h1>';
 $db_connection = pg_connect("host=localhost dbname=itsupport
 user=itsupport password=jrdd3420") or die('Failed to connect'); 
 
-<br><br>
 echo '<h2> Test <\h2>';
 
 
