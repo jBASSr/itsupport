@@ -5,12 +5,6 @@
 </head>
 <body>
 
-<form action = "submission.php" method = "post">
-Name: <input type="text" name="name"><br>
-Email: <input type="text" name="name"><br>
-<input type = "submit">
-</form>
-
 <?php 
 
 $name = "";
@@ -26,7 +20,7 @@ user=itsupport password=jrdd3420") or die('Failed to connect');
 echo "<br>";  //new line
 echo '<h2> Enter your information and problem below: </h2>'; 
 
-
+$fname = $_POST["fname"];
 
 /* $query = 'SELECT * FROM problem';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
