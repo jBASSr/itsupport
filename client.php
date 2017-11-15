@@ -40,7 +40,7 @@ pg_free_result($result);
 
 <form action="welcome_get.php" method="get">
 First Name: <input type="text" name="fname"> Last Name: <input type="text" name="lname"><br><br>
-Address:    <input type="text" name="address"> City: <input type="text" name="city"><br><br>
+Address:    <input type="text" name="address"> City: <select> <option value="al">AL</option></select><br><br>
 State: <input type="text" name="state"> Zip: <input type="text" name="zip"><br><br>
 Phone: <input type="text" name="phone"> Business Name: <input type="text" name="business_name"><br><br>
 Fax: <input type="text" name="fax"> Email: <input type="text" name="email"><br><br>
