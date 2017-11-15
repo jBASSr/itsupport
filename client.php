@@ -1,26 +1,15 @@
-<html>
-<head>
-<title> Client Side for Database </title>
 
-</head>
-<body>
+<?php  
+// ---------- PHP SECTION ---------- //
 
-<?php 
-
-$name = "";
-
-
+$fname = $_POST["fname"];
 echo '<h1> Welcome to IT Support Start-Up!</h1>'; 
-
-
 // Connect to Database 
 $db_connection = pg_connect("host=localhost dbname=itsupport
 user=itsupport password=jrdd3420") or die('Failed to connect'); 
 
 echo "<br>";  //new line
 echo '<h2> Enter your information and problem below: </h2>'; 
-
-$fname = $_POST["fname"];
 
 /* $query = 'SELECT * FROM problem';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
@@ -41,7 +30,15 @@ while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
 echo "</table>\n";
 pg_free_result($result);
 */
+?>
 
+<html>
+<head>
+<title> Client Side for Database </title>
+</head>
+<body>
+
+<?
 // ---------- FUNCTIONS ---------- //
 
 
