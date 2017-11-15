@@ -39,8 +39,18 @@ pg_free_result($result);
 <body>
 
 <form action="welcome_get.php" method="get">
-fName: <input type="text" name="fname"><br>
-lName: <input type="text" name="lname"><br>
+First Name: <input type="text" name="fname"><br><br>
+Last Name: <input type="text" name="lname"><br><br>
+Address: <input type="text" name="address"><br><br>
+City: <input type="text" name="city"><br><br>
+State: <input type="text" name="state"><br><br>
+Zip: <input type="text" name="zip"><br><br>
+Phone: <input type="text" name="phone"><br><br>
+Business Name: <input type="text" name="business_name"><br><br>
+Fax: <input type="text" name="fax"><br><br>
+Email: <input type="text" name="email"><br><br>
+Problem Description: <input type="text" name="problem_id"><br><br>
+
 <input type="submit">
 </form>
 
