@@ -39,8 +39,8 @@ pg_free_result($result);
 <body>
 
 <form action="welcome_get.php" method="get">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
+fName: <input type="text" name="fname"><br>
+lName: <input type="text" name="lname"><br>
 <input type="submit">
 </form>
 
