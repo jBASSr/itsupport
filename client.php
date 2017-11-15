@@ -1,18 +1,40 @@
 <html>
 <head>
 <title> Client Side for Database </title>
+
 </head>
 <body>
-<?php echo '<p> Web Server for Client Side for Database </p>'; 
+<?php 
 
-echo '<h1> Web Server for Client side of Database </h1>'; 
+echo '<h1> Welcome to IT Support Start-Up!</h1>'; 
 
 
 // Connect to Database 
 $db_connection = pg_connect("host=localhost dbname=itsupport
 user=itsupport password=jrdd3420") or die('Failed to connect'); 
 
-$query = 'SELECT * FROM problem';
+<br><br>
+echo '<h2> Test <\h2>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* $query = 'SELECT * FROM problem';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 echo "<table>\n";
     echo "\t<tr>\n";
@@ -30,15 +52,21 @@ while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
 }
 echo "</table>\n";
 pg_free_result($result);
-
+*/
 
 // ---------- FUNCTIONS ---------- //
 
 
-function pinsert () {
+function dbinsert ($query, $datatype) 
+{
+		
+
+
+
+
 }
 
-function pdelete () {
+function dbdelete ($query, $datatype) {
 }
 
 function highlow () {
