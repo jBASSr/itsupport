@@ -44,7 +44,7 @@ Address:    <input type="text" name="address"> City: <input type="text" name="ci
 State: <input type="text" name="state"> Zip: <input type="text" name="zip"><br><br>
 Phone: <input type="text" name="phone"> Business Name: <input type="text" name="business_name"><br><br>
 Fax: <input type="text" name="fax"> Email: <input type="text" name="email"><br><br>
-Problem Description: <input type="text" name="problem_id"><br><br>
+Problem Description: <input type="text" name="problem_id" maxlength = 50 ><br><br>
 
 <input type="submit">
 </form>
