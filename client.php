@@ -40,7 +40,7 @@ pg_free_result($result);
 </head>
 <body>
 
-<form action="welcome_get.php" method="get">
+<form action="client.php" method="post">
 
 First Name: <input type="text" name="fname"> 
 Last Name: <input type="text" name="lname"><br><br>
@@ -109,33 +109,30 @@ Fax: <input type="text" name="fax">
 Email: <input type="text" name="email"><br><br>
 Problem Description: <input type="text" name="problem_id" maxlength = 50 ><br><br>
 
-<button name ="submit" input type="submit">Submit</button>
+<button input type="submit" name="dbinsert">Submit</button>
+
+
 </form>
 
-<?
-// ---------- FUNCTIONS ---------- //
+<?php 
 
-
-function dbinsert ($query, $datatype) 
-{
-
-
-}
-
-function dbdelete ($query, $datatype) 
-{
-}
-
-function highlow () 
-{
-}
+   if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['dbinsert']))
+     {
+	dbinsert();
+     }
+   function dbinsert($query, $datatype)
+     {
+     
+     }
 
 
 
-// Close connection to Database
+
+
 pg_close($db_connection);
 
 ?>
+
 </body>
 
 <!---------- JAVASCRIPT ----------> 
