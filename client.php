@@ -33,6 +33,9 @@ pg_free_result($result);
 ?>
 
 <html>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href = "https://fonts.googleapis.com/css?family=Roboto" rel = "stylesheet">
+<link rel = "stylesheet" href "css/custom.css">
 <head>
 <title> Client Side for Database </title>
 </head>
@@ -95,11 +98,6 @@ City:
 	<option value="wi">WI</option>
 	<option value="wy">WY</option>
 
-
-
-
-
-
 </select><br><br>
 State: <input type="text" name="state"> Zip: <input type="text" name="zip"><br><br>
 Phone: <input type="text" name="phone"> Business Name: <input type="text" name="business_name"><br><br>
@@ -115,17 +113,14 @@ Problem Description: <input type="text" name="problem_id" maxlength = 50 ><br><b
 
 function dbinsert ($query, $datatype) 
 {
-		
-
-
-
-
 }
 
-function dbdelete ($query, $datatype) {
+function dbdelete ($query, $datatype) 
+{
 }
 
-function highlow () {
+function highlow () 
+{
 }
 
 
@@ -135,4 +130,10 @@ pg_close($db_connection);
 
 ?>
 </body>
+
+<!---------- JAVASCRIPT ----------> 
+
+
+
+
 </html>
