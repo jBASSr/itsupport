@@ -1,4 +1,3 @@
-
 <?php  
 // ---------- PHP SECTION ---------- //
 
@@ -120,6 +119,7 @@ Problem Description:
 
    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['dbinsert']))
      {
+     $query = "INSERT INTO client (";
      }
    function dbinsert($query, $datatype)
      {
