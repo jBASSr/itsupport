@@ -109,7 +109,7 @@ Fax: <input type="text" name="fax">
 Email: <input type="text" name="email"><br><br>
 Problem Description: <input type="text" name="problem_id" maxlength = 50 ><br><br>
 
-<button name ="Submit" input type="submit">
+<button name ="Submit" input type="submit"></button>
 </form>
 
 <?
