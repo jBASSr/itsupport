@@ -109,7 +109,7 @@ Fax: <input type="text" name="fax">
 Email: <input type="text" name="email"><br><br>
 Problem Description:
 <br> 
-<textarea name="problem" maxlength = 150 id = problem_id style = "height: 100px; width: 300px;"></textarea><br><br>
+<form name="problem" maxlength = 150 id = problem_id style = "height: 100px; width: 300px;"></form><br><br>
 
 <button input type="submit" name="dbinsert">Submit</button>
 
