@@ -45,7 +45,7 @@ pg_free_result($result);
 First Name: <input type="text" name="fname"> 
 Last Name: <input type="text" name="lname"><br><br>
 Address:    <input type="text" name="address"> 
-City: 
+State: 
 
 <select> 
 	<option value=""> </option> 
@@ -101,7 +101,7 @@ City:
 	<option value="wy">WY</option>
 
 </select><br><br>
-State: <input type="text" name="state"> 
+City: <input type="text" name="state"> 
 Zip: <input type="text" name="zip"><br><br>
 Phone: <input type="text" name="phone"> 
 Business Name: <input type="text" name="business_name"><br><br>
@@ -120,7 +120,7 @@ Problem Description:
 
    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['dbinsert']))
      {
-	dbinsert();
+	$query = "INSERT INTO client "
      }
    function dbinsert($query, $datatype)
      {
