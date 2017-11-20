@@ -2,11 +2,10 @@
 <?php  
 // ---------- PHP SECTION ---------- //
 
+include ("db.php");
 $fname = $_POST["fname"];
 echo '<h1> Welcome to IT Support Start-Up!</h1>'; 
 // Connect to Database 
-$db_connection = pg_connect("host=localhost dbname=itsupport
-user=itsupport password=jrdd3420") or die('Failed to connect'); 
 
 echo "<br>";  //new line
 echo '<h2> Enter your information and problem below: </h2>'; 
@@ -42,9 +41,12 @@ pg_free_result($result);
 <body>
 
 <form action="welcome_get.php" method="get">
-First Name: <input type="text" name="fname"> Last Name: <input type="text" name="lname"><br><br>
+
+First Name: <input type="text" name="fname"> 
+Last Name: <input type="text" name="lname"><br><br>
 Address:    <input type="text" name="address"> 
 City: 
+
 <select> 
 	<option value=""> </option> 
 	<option value="al">AL</option>
@@ -99,12 +101,15 @@ City:
 	<option value="wy">WY</option>
 
 </select><br><br>
-State: <input type="text" name="state"> Zip: <input type="text" name="zip"><br><br>
-Phone: <input type="text" name="phone"> Business Name: <input type="text" name="business_name"><br><br>
-Fax: <input type="text" name="fax"> Email: <input type="text" name="email"><br><br>
+State: <input type="text" name="state"> 
+Zip: <input type="text" name="zip"><br><br>
+Phone: <input type="text" name="phone"> 
+Business Name: <input type="text" name="business_name"><br><br>
+Fax: <input type="text" name="fax"> 
+Email: <input type="text" name="email"><br><br>
 Problem Description: <input type="text" name="problem_id" maxlength = 50 ><br><br>
 
-<input type="submit">
+Submit Problem: <input type="submit">
 </form>
 
 <?
@@ -113,6 +118,8 @@ Problem Description: <input type="text" name="problem_id" maxlength = 50 ><br><b
 
 function dbinsert ($query, $datatype) 
 {
+
+
 }
 
 function dbdelete ($query, $datatype) 
