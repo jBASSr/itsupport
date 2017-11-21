@@ -120,7 +120,7 @@ password=jrdd3420") or die ("Could not connect to database");
    
     $query = "INSERT INTO client VALUES ('16','$_POST[fname]','$_POST[lname]', '$_POST[address]','$_POST[city]',
      '$_POST[zip]','$_POST[phone]','$_POST[business_name]','$_POST[fax]','$_POST[email]','$_POST[problem]')";
-     
+    print_r ($_POST); 
      $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 
