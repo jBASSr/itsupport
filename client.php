@@ -118,7 +118,7 @@ Problem Description:
 $db_connection = pg_connect("host=localhost dbname=itsupport user=itsupport
 password=jrdd3420") or die ("Could not connect to database");
    
-    $query = "INSERT INTO client (fname,lname,address,city,state,zip,phone,business_name,fax,email,) VALUES (
+    $query = "INSERT INTO client (fname,lname,address,city,state,zip,phone,business_name,fax,email) VALUES (
     '$_POST[fname]',
     '$_POST[lname]', 
     '$_POST[address]',    
