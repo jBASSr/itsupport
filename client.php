@@ -117,14 +117,14 @@ Problem Description:
 
 <?php 
 
-   if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['dbinsert']))
+   
+    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['dbinsert']))
      {
-     $query = "INSERT INTO client (";
+     $query = "INSERT INTO client VALUES ('$_POST[fname]','$_POST[lname]', '$_POST[address]','$_POST[city]',
+     '$_POST[zip]','$_POST[phone]','$_POST[business_name]','$_POST[fax]','$_POST[email]','$_POST[problem]')";
+     $result = pg_query($query);
      }
-   function dbinsert($query, $datatype)
-     {
-     
-     }
+
 
 
 
