@@ -100,7 +100,7 @@ State:
 
 </select><br><br>
 City: <input type="text" name="city"> 
-Zip: <input type="text" name="zip"><br><br>
+Zip: <input type="text" name="zip" maxlength = 5><br><br>
 Phone: <input type="text" name="phone"> 
 Business Name: <input type="text" name="business_name"><br><br>
 Fax: <input type="text" name="fax"> 
