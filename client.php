@@ -1,8 +1,7 @@
 <?php  
 // ---------- PHP SECTION ---------- //
 
-include ("db.php");
-$fname = $_POST["fname"];
+//include ("db.php");
 echo '<h1> Welcome to IT Support Start-Up!</h1>'; 
 // Connect to Database 
 
@@ -116,15 +115,13 @@ Problem Description:
 </form>
 
 <?php 
-
+$db_connection = pg_connect("host=localhost dbname=itsupport user=itsupport
+password=jrdd3420") or die ("Could not connect to database");
    
-    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['dbinsert']))
-     {
-     $query = "INSERT INTO client VALUES ('$_POST[fname]','$_POST[lname]', '$_POST[address]','$_POST[city]',
+    $query = "INSERT INTO client VALUES ('$_POST[fname]','$_POST[lname]', '$_POST[address]','$_POST[city]',
      '$_POST[zip]','$_POST[phone]','$_POST[business_name]','$_POST[fax]','$_POST[email]','$_POST[problem]')";
-     $result = pg_query($query);
-     }
-
+     
+     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 
 
