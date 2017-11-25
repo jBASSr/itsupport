@@ -1,9 +1,7 @@
 <?php  
 // ---------- PHP SECTION ---------- //
 
-//include ("db.php");
 echo '<h1> Welcome to IT Support Start-Up!</h1>'; 
-// Connect to Database 
 
 echo "<br>";  //new line
 echo '<h2> Enter your information and problem below: </h2>'; 
@@ -123,6 +121,7 @@ Problem Description:
 
 </form>
 
+<!---------- PHP SECTION(functions) ---------- >
 <?php 
 include("db.php");
 
