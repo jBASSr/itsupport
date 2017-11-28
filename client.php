@@ -1,35 +1,30 @@
-
 <?php  
 // ---------- PHP SECTION ---------- //
 
-$fname = $_POST["fname"];
 echo '<h1> Welcome to IT Support Start-Up!</h1>'; 
-// Connect to Database 
-$db_connection = pg_connect("host=localhost dbname=itsupport
-user=itsupport password=jrdd3420") or die('Failed to connect'); 
 
 echo "<br>";  //new line
 echo '<h2> Enter your information and problem below: </h2>'; 
 
 /* $query = 'SELECT * FROM problem';
-$result = pg_query($query) or die('Query failed: ' . pg_last_error());
-echo "<table>\n";
-    echo "\t<tr>\n";
-    for ($i = 0; $i <= 11; $i++) {
-    $fieldname = pg_field_name($result, $i);
-    echo "\t\t<th>$fieldname</th>";
-    }
-    echo "\t</tr>\n";
-while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-    echo "\t<tr>\n";
-    foreach ($line as $col_value) {
-        echo "\t\t<td>$col_value</td>\n";
-    }
-    echo "\t</tr>\n";
-}
-echo "</table>\n";
-pg_free_result($result);
-*/
+   $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+   echo "<table>\n";
+   echo "\t<tr>\n";
+   for ($i = 0; $i <= 11; $i++) {
+   $fieldname = pg_field_name($result, $i);
+   echo "\t\t<th>$fieldname</th>";
+   }
+   echo "\t</tr>\n";
+   while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+   echo "\t<tr>\n";
+   foreach ($line as $col_value) {
+   echo "\t\t<td>$col_value</td>\n";
+   }
+   echo "\t</tr>\n";
+   }
+   echo "</table>\n";
+   pg_free_result($result);
+ */
 ?>
 
 <html>
@@ -41,94 +36,121 @@ pg_free_result($result);
 </head>
 <body>
 
-<form action="welcome_get.php" method="get">
-First Name: <input type="text" name="fname"> Last Name: <input type="text" name="lname"><br><br>
+<form action="client.php" method="post">
+
+First Name: <input type="text" name="fname"> 
+Last Name: <input type="text" name="lname"><br><br>
 Address:    <input type="text" name="address"> 
-City: 
-<select> 
-	<option value=""> </option> 
-	<option value="al">AL</option>
-	<option value="ak">AK</option>
-	<option value="az">AZ</option>
-	<option value="ar">AR</option>
-	<option value="ca">CA</option>
-	<option value="co">CO</option>
-	<option value="ct">CT</option>
-	<option value="de">DE</option>
-	<option value="fl">FL</option>
-	<option value="ga">GA</option>
-	<option value="hi">HI</option>
-	<option value="id">ID</option>
-	<option value="il">IL</option>
-	<option value="in">IN</option>
-	<option value="ia">IA</option>
-	<option value="ks">KS</option>
-	<option value="ky">KY</option>
-	<option value="la">LA</option>
-	<option value="me">ME</option>
-	<option value="md">MD</option>
-	<option value="ma">MA</option>
-	<option value="mi">MI</option>
-	<option value="mn">MN</option>
-	<option value="ms">MS</option>
-	<option value="mo">MO</option>
-	<option value="mt">MT</option>
-	<option value="ne">NE</option>
-	<option value="nv">NV</option>
-	<option value="nh">NH</option>
-	<option value="nj">NJ</option>
-	<option value="nm">NM</option>
-	<option value="ny">NY</option>
-	<option value="nc">NC</option>
-	<option value="nd">ND</option>
-	<option value="oh">OH</option>
-	<option value="ok">OK</option>
-	<option value="or">OR</option>
-	<option value="pa">PA</option>
-	<option value="ri">RI</option>
-	<option value="sc">SC</option>
-	<option value="sd">SD</option>
-	<option value="tn">TN</option>
-	<option value="tx">TX</option>
-	<option value="ut">UT</option>
-	<option value="vt">VT</option>
-	<option value="va">VA</option>
-	<option value="wa">WA</option>
-	<option value="wv">WV</option>
-	<option value="wi">WI</option>
-	<option value="wy">WY</option>
+State: 
+
+<select name = "state"> 
+<option value=""> </option> 
+<option value="AL">AL</option>
+<option value="AK">AK</option>
+<option value="AZ">AZ</option>
+<option value="AR">AR</option>
+<option value="CA">CA</option>
+<option value="CO">CO</option>
+<option value="CT">CT</option>
+<option value="DE">DE</option>
+<option value="FL">FL</option>
+<option value="GA">GA</option>
+<option value="HI">HI</option>
+<option value="ID">ID</option>
+<option value="IL">IL</option>
+<option value="IN">IN</option>
+<option value="IA">IA</option>
+<option value="KS">KS</option>
+<option value="KY">KY</option>
+<option value="LA">LA</option>
+<option value="ME">ME</option>
+<option value="MD">MD</option>
+<option value="MA">MA</option>
+<option value="MI">MI</option>
+<option value="MN">MN</option>
+<option value="MS">MS</option>
+<option value="MO">MO</option>
+<option value="MT">MT</option>
+<option value="NE">NE</option>
+<option value="NV">NV</option>
+<option value="NH">NH</option>
+<option value="NJ">NJ</option>
+<option value="NM">NM</option>
+<option value="NY">NY</option>
+<option value="NC">NC</option>
+<option value="ND">ND</option>
+<option value="OH">OH</option>
+<option value="OK">OK</option>
+<option value="OR">OR</option>
+<option value="PA">PA</option>
+<option value="RI">RI</option>
+<option value="SC">SC</option>
+<option value="SD">SD</option>
+<option value="TN">TN</option>
+<option value="TX">TX</option>
+<option value="UT">UT</option>
+<option value="VT">VT</option>
+<option value="VA">VA</option>
+<option value="WA">WA</option>
+<option value="WV">WV</option>
+<option value="WI">WI</option>
+<option value="WY">WY</option>
 
 </select><br><br>
-State: <input type="text" name="state"> Zip: <input type="text" name="zip"><br><br>
-Phone: <input type="text" name="phone"> Business Name: <input type="text" name="business_name"><br><br>
-Fax: <input type="text" name="fax"> Email: <input type="text" name="email"><br><br>
-Problem Description: <input type="text" name="problem_id" maxlength = 50 ><br><br>
+City: <input type="text" name="city"> 
+Zip: <input type="text" name="zip" maxlength = 5><br><br>
+Phone: <input type="text" name="phone"> 
+Business Name: <input type="text" name="business_name"><br><br>
+Fax: <input type="text" name="fax"> 
+Email: <input type="text" name="email"><br><br>
+Problem Category: 
+<select name = "category"> 
+<option value=""> </option> 
+<option value="Hardware">Hardware</option>
+<option value="Software">Software</option>
+<option value="Security">Security</option>
+<option value="Network">Network</option>
+</select>	
+<br><br> 
+Problem Description:
+<br> 
+<textarea name="problem" maxlength = 150 id = problem_id rows = 3 cols = 30 style = "resize: none;" ></textarea><br><br>
 
-<input type="submit">
+<button input type="submit" name="dbinsert">Submit</button>
+
+
 </form>
 
-<?
-// ---------- FUNCTIONS ---------- //
+<!---------- PHP SECTION(functions) ---------- >
+<?php 
+include("db.php");
+
+$query = "INSERT INTO client (fname,lname,address,city,state,zip,phone,business_name,fax,email) VALUES (
+        '$_POST[fname]',
+	'$_POST[lname]', 
+	'$_POST[address]',    
+	'$_POST[city]',
+	'$_POST[state]',
+	'$_POST[zip]',
+	'$_POST[phone]',
+	'$_POST[business_name]',
+	'$_POST[fax]',
+	'$_POST[email]')";
+pg_query($query) or die('Query failed: ' . pg_last_error());
+
+$somevalue = "SELECT * FROM client";
+$result = pg_query($somevalue) or die('Query failed: ' . pg_last_error());
+$c = pg_num_rows($result); 
+
+// make client_id for foreign key constraints for problem
+$probandcat = "INSERT INTO problem (client_id, category, description) VALUES ('$c','$_POST[category]','$_POST[problem]')"; 
+pg_query($probandcat) or die('Query failed: ' . pg_last_error());
 
 
-function dbinsert ($query, $datatype) 
-{
-}
-
-function dbdelete ($query, $datatype) 
-{
-}
-
-function highlow () 
-{
-}
-
-
-
-// Close connection to Database
 pg_close($db_connection);
 
 ?>
+
 </body>
 
 <!---------- JAVASCRIPT ----------> 
