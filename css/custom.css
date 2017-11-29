@@ -1,6 +1,43 @@
+
+#wrapper {
+position: relative;
+width: 1500px;
+height: 2000px;
+border: solid rgb(0,0,255) 10px;
+margin: 0px auto;
+background-color: black;
+color:white;
+}
+
+
+
+header
+{
+position: absolute;
+left: 5px;
+right: 5px;
+top: 5px;
+height: 150px;
+border: solid rgb(120,120,120) 5px;
+margin: 0px;
+font-size: 200%;
+background-size: 100% 100%;
+}
+
 body {
   min-height: 2000px;
   padding-top: 70px;
-  background-color: #161616;
+  background-color: white;
 }
 
+
+
+h1
+{
+
+text-align: left;
+vertical-align: top;
+color: blue;
+font-family: Impact,Charcoal,sans-serif;
+font-style: italic;
+}

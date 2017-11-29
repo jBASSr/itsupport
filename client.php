@@ -1,10 +1,8 @@
 <?php  
 include("db.php");
+
 // ---------- PHP SECTION ---------- //
 
-echo '<h1> Welcome to IT Support Start-Up!</h1>'; 
-echo "<br>";  //new line
-echo '<h2> Enter your information and problem below: </h2>'; 
 session_start();
 
 
@@ -45,13 +43,23 @@ exit;
 <! DOCTYPE html>
 <html lang = "en">
 <head>
+<div id = "wrapper">
 <!-----------JAVASCRIPT-------------->
 
-<link rel = "icon" type "type/x-icon" href = " ">
+<link rel = "icon" type = "type/x-icon" href = "ITStartUp.png">
+<link rel = "stylesheet" type = "text/css" href = "css/custom.css">
 <title> Client Side for Database </title>
 <meta charset = "utf-8">
 <meta name ="viewport" content = "width=device-width, initial-scale=1"> 
 
+<div id = "header">
+<img src = "ITStartUp.png" alt = "logo" style = "float:left;width:50px;height:50px;"> 
+
+<h1> IT Support Start-Up</h1> 
+</div>
+
+<br><br>  
+<h2> Enter your information and problem below: </h2> 
 
 </head>
 <body>
@@ -166,7 +174,7 @@ pg_close($db_connection);
 
 ?>
 
-
+</div>
 </body>
 
 </html>
