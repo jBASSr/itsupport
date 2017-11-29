@@ -5,13 +5,10 @@ include("db.php");
 echo '<h1> Welcome to IT Support Start-Up!</h1>'; 
 echo "<br>";  //new line
 echo '<h2> Enter your information and problem below: </h2>'; 
+session_start();
 
 
-
-
-
-
-
+// Check if submit button has been clicked, along with validation of forms
 if (isset($_POST['dbinsert']))
 {
 $query = "INSERT INTO client (fname,lname,address,city,state,zip,phone,business_name,fax,email) VALUES (
@@ -36,15 +33,11 @@ $c = pg_num_rows($result);
 $probandcat = "INSERT INTO problem (client_id, category, description) VALUES ('$c','$_POST[category]','$_POST[problem]')"; 
 pg_query($probandcat) or die('Query failed : ' . pg_last_error());
 
-user($c);
+// Load page for client that has been made!
+header("Location: clientmade.php?cid=$c");
+// exit current page
+exit;
 }
-
-else
-{ 
-echo "Please fill the information below";
-}
-
-
 
 
 ?>
@@ -53,127 +46,21 @@ echo "Please fill the information below";
 <html lang = "en">
 <head>
 <!-----------JAVASCRIPT-------------->
-<script>
 
-function validateForm()
-{
-	var a = document.forms["client"]["fname"].value
-	if (a == "")
-	{
-	   alert("First name must be filled out");
-           return false;
-        }
-	
-	var b = document.forms["client"]["lname"].value
-	 if (b == "")
-	{
-	   alert("Last name must be filled out");
-           return false;
-	}
- 	
-	var c = document.forms["client"]["address"].value
-	if (c == "")
-	{
-	   alert("Address must be filled out");
-           return false;
-	}
-	
-	var d = document.forms["client"]["state"].value
-	if (d == "")
-	{
-	   alert("A state must be selected");
-           return false;
-	}
-	
-	var e = document.forms["client"]["city"].value
-	if (e == "")
-	{
-	   alert("City must be filled out");
-           return false;
-	}
-	
-	var f = document.forms["client"]["zip"].value
-	if (f == "")
-	{
-	   alert("Zip must be filled out");
-           return false;
-	}
-
-	if (isNaN(f) || f.length < 5 )
-	{
-	   alert("Must enter valid zip code");
-           return false;
-        }
-	
-	var g = document.forms["client"]["phone"].value
-	if (g == "")
-	{
-	   alert("Phone must be filled out");
-           return false;
-	}
-	
-	if (g.length < 12)
-	{
-	   alert("Must enter valid phone number");
-           return false;
-        }
-	
-        var k = document.forms["client"]["fax"].value
-	
-        if (k.length == 0)
-		return true;
-        else if (k.length < 13)
-	{
-	   alert("Must enter valid fax number");
-           return false;
-        }
-	
-        
-        var h = document.forms["client"]["email"].value
-	if (h == "")
-	{
-	   alert("Email must be filled out");
-           return false;
-	}
-	
-	var i = document.forms["client"]["category"].value
-	if (i == "")
-	{
-	   alert("A category must be selected");
-           return false;
-	}
-	
-	var j = document.forms["client"]["problem"].value
-	if (j == "")
-	{
-	   alert("Problem Description must be filled out");
-           return false;
-        }
-
-}
+<link rel = "icon" type "type/x-icon" href = " ">
+<title> Client Side for Database </title>
+<meta charset = "utf-8">
+<meta name ="viewport" content = "width=device-width, initial-scale=1"> 
 
 
-function user(cid)
-{
-
-window.location.href="clientmade.php?cid=" + cid;
-
-}
-
-
-</script>
-
-	<title> Client Side for Database </title>
-	<meta charset = "utf-8">
-        <meta name ="viewport" content = "width=device-width, initial-scale=1"> 
 </head>
 <body>
 
-<form id = "user" name= "client" action="client.php" onsubmit="return validateForm(<?php echo $c; ?>);" method="post">
+<form name= "client" action="client.php"  method="post">
 
-First Name*: <input type="text" name="fname" pattern="[A-Za-z0-9]{1,25}" required> 
-Last Name*: <input type="text" name="lname" pattern="[A-Za-z-0-9]{1,25}" required><br><br>
-Address*:    <input type="text" name="address" required> 
+First Name*: <input type="text" name="fname" pattern="[A-Za-z0-9]{1,15}" required> 
+Last Name*: <input type="text" name="lname" pattern="[A-Za-z0-9]{1,15}" required><br><br>
+Address*:    <input type="text" name="address" pattern="[A-Za-z0-9'\.\-\s\,{1,30}" required> 
 State*: 
 
 <select name = "state" required> 
@@ -230,12 +117,25 @@ State*:
 <option value="WY">WY</option>
 
 </select><br><br>
-City*: <input type="text" name="city" required> 
-Zip*: <input type="text" name="zip" maxlength = 5 required><br><br>
+
+City*: <input type="text" name="city" pattern = "[A-Za-z0-9required]{1,20}" required> 
+
+Zip*: <input type="text" name="zip" maxlength = 5 pattern = "[0-9]{5}" required>
+
+<br><br>
+
 Phone* (xxx-xxx-xxxx): <input type="tel" name="phone" maxlength = 12 pattern = "\d{3}-\d{3}-\d{4}$" required> 
-Business Name: <input type="text" name="business_name"><br><br>
+
+Business Name: <input type="text" name="business_name">
+
+<br><br>
+
 Fax (x-xxx-xxxxxxx): <input type="text" name="fax" maxlength = 13 pattern = "\d{1}-\d{3}-\d{7}"> 
-Email*: <input type="email" name="email" pattern = "[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" required><br><br>
+
+Email*: <input type="email" name="email" pattern = "[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" required>
+
+<br><br>
+
 Problem Category*: 
 <select name = "category" required> 
 <option value=""> </option> 
@@ -244,13 +144,14 @@ Problem Category*:
 <option value="Security">Security</option>
 <option value="Network">Network</option>
 </select>	
+
 <br><br> 
+
 Problem Description*:
 <br> 
-<textarea name="problem" maxlength = 150 id = problem_id rows = 3 cols = 30 style = "resize: none;" required></textarea><br><br>
+<textarea name="problem" maxlength = 150 id = problem_id rows = 3 cols = 30 style = "resize: none;" pattern = "[A-Za-z0-9!#$%&amp;'*+\/=?^_`{|}~.-]{1,150}" required></textarea><br><br>
 
-<input type="submit" name="dbinsert" id = "insert" value = "Submit"> 
-<!onclick="user(<?php echo $c; ?>)"
+<input type="submit" name="dbinsert" value = "Submit"> 
 
 
 </form>
@@ -258,37 +159,11 @@ Problem Description*:
 <br>
 <h2> * means this field is required. </h2> 
 
-<!---------- PHP SECTION(functions) ---------- >
-
 <?php 
-/*
-$query = "INSERT INTO client (fname,lname,address,city,state,zip,phone,business_name,fax,email) VALUES (
-        '$_POST[fname]',
-	'$_POST[lname]', 
-	'$_POST[address]',    
-	'$_POST[city]',
-	'$_POST[state]',
-	'$_POST[zip]',
-	'$_POST[phone]',
-	'$_POST[business_name]',
-	'$_POST[fax]',
-	'$_POST[email]')";
-pg_query($query) or die('Query failed: ' . pg_last_error());
 
-$somevalue = "SELECT * FROM client";
-$result = pg_query($somevalue) or die('Query failed: ' . pg_last_error());
-$c = pg_num_rows($result); 
-
-print_r($result);
-
-// make client_id for foreign key constraints for problem
-$probandcat = "INSERT INTO problem (client_id, category, description) VALUES ('$c','$_POST[category]','$_POST[problem]')"; 
-pg_query($probandcat) or die('Query failed: ' . pg_last_error());
-
-
+// Close connection to databse
 pg_close($db_connection);
-*/
-pg_close($db_connection);
+
 ?>
 
 

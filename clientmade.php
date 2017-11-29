@@ -8,5 +8,7 @@ include("db.php");
 </head>
 <body>
 <p> Client has been created! </p>
+
+<?php echo 'Your client ID is ' . htmlspecialchars($_GET["cid"]); ?>
 </body>
 </html>
