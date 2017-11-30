@@ -43,26 +43,43 @@ exit;
 <! DOCTYPE html>
 <html lang = "en">
 <head>
-<div id = "wrapper">
 <!-----------JAVASCRIPT-------------->
 
 <link rel = "icon" type = "type/x-icon" href = "ITStartUp.png">
 <link rel = "stylesheet" type = "text/css" href = "css/custom.css">
-<title> Client Side for Database </title>
+<title> IT Support Start-Up</title>
 <meta charset = "utf-8">
 <meta name ="viewport" content = "width=device-width, initial-scale=1"> 
+<div id = "top">
 
-<div id = "header">
 <img src = "ITStartUp.png" alt = "logo" style = "float:left;width:50px;height:50px;"> 
-
 <h1> IT Support Start-Up</h1> 
 </div>
 
-<br><br>  
+<div class = "navbar">
+<ul>
+<li><a  href ="clienthome.php">Home</a><li>
+<li><a  href ="clientservices.php">Services</a><li>
+<li><a  class="active" href ="client.php">Submit Problem</a></li>
+<li><a  href ="clientmade.php">My Account</a><li>
+</ul>
+
+</div>
+
+<div id = "wrapper">
+<div class = "main">
+<h3> If you have already made a problem,  
+simply login to your account to make 
+another problem. Go to 'My Account' 
+at the top of the page. </h3>
+<br><br>
+
 <h2> Enter your information and problem below: </h2> 
 
 </head>
+
 <body>
+
 
 <form name= "client" action="client.php"  method="post">
 
@@ -162,10 +179,14 @@ Problem Description*:
 <input type="submit" name="dbinsert" value = "Submit"> 
 
 
-</form>
+<div>
 
 <br>
-<h2> * means this field is required. </h2> 
+<h2 style = 'font-style: normal; font-family: "Times New Roman", Times, serif;'> * means this field is required. </h2> 
+
+</div>
+
+</div>
 
 <?php 
 
@@ -174,7 +195,6 @@ pg_close($db_connection);
 
 ?>
 
-</div>
 </body>
 
 </html>
